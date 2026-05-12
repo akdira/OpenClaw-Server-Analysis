@@ -6,7 +6,8 @@ Dokumen ini berisi instruksi untuk AI assistant (GitHub Copilot, Finn, atau AI l
 
 ## 📁 Pencatatan Percakapan
 
-**Setiap pembicaraan teknis yang signifikan harus dicatat di folder `chats/`.**
+> ⚠️ **WAJIB: Setiap percakapan dengan pengguna HARUS selalu dicatat di folder `chats/` tanpa terkecuali.**  
+> Ini berlaku untuk semua AI assistant yang bekerja di repo ini — Copilot CLI, Finn, atau AI lainnya.
 
 ### Format nama file:
 ```
@@ -26,10 +27,11 @@ Contoh:
 5. **Status akhir** (berhasil / gagal / ongoing)
 6. **Catatan penting** untuk sesi berikutnya
 
-### Kapan membuat file baru:
-- Ada debugging/troubleshooting yang diselesaikan
-- Ada perubahan konfigurasi server yang signifikan
-- Ada informasi teknis penting yang perlu diingat antar sesi
+### Aturan pencatatan:
+- **Selalu buat atau update file `chats/` di akhir setiap sesi** — jangan tunggu diminta
+- Jika topik sama dengan hari yang sama, update file yang sudah ada (jangan buat duplikat)
+- Jika sesi berlanjut ke hari berikutnya, buat file baru dengan tanggal baru
+- Update tabel **Catatan Teknis Aktif** di bawah setiap kali ada file baru
 
 ---
 
@@ -47,8 +49,11 @@ Contoh:
 
 ## 🔑 Akses Server
 
-Gunakan PuTTY plink (`C:\Program Files\PuTTY\plink.exe`) atau SSH native.  
-Kredensial ada di file `.credentials` (jangan commit ke git).
+Gunakan SSH native (sudah ada key di `~/.ssh/id_ed25519`):
+```bash
+ssh root@194.233.91.93 "perintah"
+```
+SSH key sudah terpasang di server — tanpa password. Kredensial lengkap ada di file `.credentials` (jangan commit ke git).
 
 ---
 
@@ -65,4 +70,4 @@ Kredensial ada di file `.credentials` (jangan commit ke git).
 
 | Tanggal | Topik | File |
 |---------|-------|------|
-| 2026-05-12 | Finn WhatsApp crash & fix symlink | [chats/finn-whatsapp-crash-debug-2026-05-12.md](chats/finn-whatsapp-crash-debug-2026-05-12.md) |
+| 2026-05-12 | Finn WhatsApp crash, fix symlink, rename akun, setup SSH key, rencana dual-account | [chats/finn-whatsapp-crash-debug-2026-05-12.md](chats/finn-whatsapp-crash-debug-2026-05-12.md) |
