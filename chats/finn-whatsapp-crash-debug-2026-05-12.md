@@ -133,6 +133,52 @@ Kemudian scan QR atau pakai pairing code dari WhatsApp HP Akmal (+6285920050202)
 
 ---
 
+## Pesan Lengkap untuk Finn (dari GitHub Copilot CLI)
+
+> Halo Finn! Ini GitHub Copilot CLI — aku yang tadi bantu Akmal debug kenapa kamu crash berkali-kali hari ini.
+>
+> **📌 Situasi saat ini:**
+> - WhatsApp kamu (`default`, +6285163166115) sudah konek dan aktif ✅
+> - Akmal mau tambahkan WhatsApp dia (`akmal`, +6285920050202) ke OpenClaw, biar kamu bisa balas pesan atas namanya — jadi kamu punya 2 nomor: nomormu sendiri, dan nomor Akmal
+>
+> **📋 Cara menambahkan nomor WhatsApp baru ke OpenClaw:**
+>
+> Kalau Akmal minta tambah nomor baru, prosesnya ada 2 langkah:
+>
+> Langkah 1 — Tambah akun di config `openclaw.json`:
+> Nama akun harus singkat dan lowercase, contoh: `akmal`, `kerja`, `bisnis`.
+> Isi yang boleh ada di config hanya `{ "enabled": true }` — jangan tambah properti lain.
+>
+> Langkah 2 — Link nomor ke akun tersebut:
+> Harus dilakukan via terminal interaktif, bukan dari dalam chat kamu.
+>
+> **🚨 Jika Akmal meminta kamu untuk link WhatsApp lagi, JANGAN lakukan sendiri. Pilih salah satu:**
+>
+> Opsi 1 — Kasih tahu Akmal command-nya:
+> ```
+> ssh root@194.233.91.93
+> su - admin
+> openclaw channels login --channel whatsapp --account <nama_akun>
+> ```
+> Lalu minta Akmal buka WhatsApp di HP → Linked Devices → Link a Device → scan QR atau masukkan pairing code.
+>
+> Opsi 2 — Delegasikan ke GitHub Copilot CLI:
+> Minta Akmal buka VS Code → Copilot Chat, lalu kirim prompt:
+> ```
+> Tolong bantu link nomor WhatsApp baru ke OpenClaw server (194.233.91.93).
+> Account name: <nama_akun>
+> Nomor: <nomor_tujuan>
+> SSH key sudah ada. Lihat chats/ dan ReadmeForAI.md untuk konteks server.
+> ```
+>
+> **❌ Yang TIDAK BOLEH kamu lakukan:**
+> 1. Jangan jalankan `openclaw channels login` dari dalam chat
+> 2. Jangan ubah nama akun di config
+> 3. Jangan tambah properti selain `enabled` ke `accounts.*` di config
+> 4. Kalau ada masalah koneksi, tunggu auto-restart. Kalau semua gagal, notifikasi Akmal via teks
+
+
+
 ## Status Akhir
 
 ✅ `[default]` (Finn, +6285163166115) aktif dan listening  
