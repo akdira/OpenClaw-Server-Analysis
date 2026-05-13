@@ -37,13 +37,13 @@ Contoh:
 
 ## 🖥️ Konteks Server
 
-- **VPS:** Contabo Singapore — `194.233.91.93`
+- **VPS:** Contabo Singapore (lihat `.credentials`)
 - **OS:** Linux (systemd)
 - **Service:** `openclaw-gateway.service` (user: `admin`)
 - **OpenClaw version:** v2026.5.7
-- **Domain:** `finn.jpu.my.id`
-- **Bot WhatsApp:** `+6285163166115`
-- **Pemilik:** `+6285920050202`
+- **Domain:** (lihat `.credentials`)
+- **Bot WhatsApp:** (lihat `.credentials`)
+- **Pemilik:** (lihat `.credentials`)
 - **Log file:** `/tmp/openclaw/openclaw-YYYY-MM-DD.log`
 - **Config:** `/home/admin/.openclaw/openclaw.json`
 
@@ -51,9 +51,10 @@ Contoh:
 
 Gunakan SSH native (sudah ada key di `~/.ssh/id_ed25519`):
 ```bash
-ssh root@194.233.91.93 "perintah"
+ssh root@<SERVER_IP> "perintah"
 ```
-SSH key sudah terpasang di server — tanpa password. Kredensial lengkap ada di file `.credentials` (jangan commit ke git).
+IP server dan semua kredensial lengkap ada di file `.credentials` (jangan commit ke git).  
+SSH key sudah terpasang di server — tanpa password.
 
 ---
 
@@ -71,3 +72,5 @@ SSH key sudah terpasang di server — tanpa password. Kredensial lengkap ada di 
 | Tanggal | Topik | File |
 |---------|-------|------|
 | 2026-05-12 | Finn WhatsApp crash, fix symlink, rename akun, setup SSH key, rencana dual-account | [chats/finn-whatsapp-crash-debug-2026-05-12.md](chats/finn-whatsapp-crash-debug-2026-05-12.md) |
+| 2026-05-12 | Custom MD files tidak muncul di web UI OpenClaw — investigasi root cause | [chats/openclaw-custom-md-files-2026-05-12.md](chats/openclaw-custom-md-files-2026-05-12.md) |
+| 2026-05-14 | DeepSeek kredit habis + Gemini 2.0 Flash deprecated → fix model ke flash + gemini-2.5-flash | [chats/model-fix-deepseek-gemini-2026-05-14.md](chats/model-fix-deepseek-gemini-2026-05-14.md) |
